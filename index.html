@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Melhores Momentos</title>
+    <link rel="stylesheet" href="inicial.css">
+    <link rel="icon" href="img/favicon.png">
+</head>
+<body>
+
+    <header>
+        <h1><a href="index.html" style="text-decoration: none; color: inherit;">Nossas Memórias</a></h1>
+        <button id="menu-toggle" aria-label="Abrir Menu">☰</button>
+    </header>
+
+    <div class="container">
+        <nav id="sidebar" class="sidebar">
+            <ul>
+                <li><a href="primeiro.html">O(s) primeiro(s) encontro(s)</a></li>
+                <li><a href="presente.html">O presente</a></li>
+                <li><a href="pedido.html">Pedido de Namoro</a></li>
+                <li><a href="bnb.html">Nosso AirBnb</a></li>
+            </ul>
+        </nav>
+
+        <main class="content">
+            <h2>A nossa Trajetória</h2>
+            <p>Bem, este é um pequeno projeto meu, espero que você se sinta tão especial quanto eu gostaria. <br>Eu irei relatar aqui todo nosso caminho, desde o dia que nos conhecemos até como nosso relacionamento está hoje então espero que goste <br>porque foi feito de coração.</p>
+            <hr class="highlight-line">
+            
+            <div class="content-item">
+                <div class="left-container">
+                    <div class="image-container">
+                        <img src="img/chapeu-seletor.png" alt="Chapéu Seletor">
+                    </div>
+                    <div class="text-container">
+                        <p>E cá estamos nós, onde tudo começou, e pensar que você teve a atitude de me chamar kkkk e ainda bem que eu tive essa sorte porque meu Deus, eu me sinto o homem mais feliz do mundo por ter você ao meu lado. <br>E uma coisa que eu jamais vou esquecer, foi a forma que nosso contato começou, logo pelas casas de Hogwarts kkkkk, ainda bem que o fato da minha casa ser superior a sua não implicou o futuro do nosso relacionamento (ainda). E o mais legal, é que depois desse dia nós nunca mais nos separamos, e pensar que foi por causa do tinder, encontrei diamante em busca de cobre e só tenho a agradecer por ter você ao meu lado.</p>
+                    </div>
+                </div>
+                <div class="right-container">
+                    <div class="image-container">
+                        <img class="conversa" src="img/conversa.jpg" alt="Print da nossa primeira conversa">
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.toggle('active');
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('sidebar').classList.remove('active');
+        });
+    </script>
+
+</body>
+</html>

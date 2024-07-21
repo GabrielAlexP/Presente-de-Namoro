@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Melhores Momentos</title>
+    <link rel="stylesheet" href="primeiro.css">
+    <link rel="icon" href="img/favicon.png">
+</head>
+<body>
+
+    <header>
+        <h1><a href="index.html" style="text-decoration: none; color: inherit;">Nossas Memórias</a></h1>
+        <button id="menu-toggle" aria-label="Abrir Menu">☰</button>
+    </header>
+
+    <div class="container">
+        <nav id="sidebar" class="sidebar">
+            <ul>
+                <li><a href="primeiro.html">O(s) primeiro(s) encontro(s)</a></li>
+                <li><a href="presente.html">O presente</a></li>
+                <li><a href="pedido.html">Pedido de Namoro</a></li>
+                <li><a href="bnb.html">Nosso AirBnb</a></li>
+            </ul>
+        </nav>
+
+        <main class="content">
+            <h2>O Encontro</h2>
+            <p>Aiai, nem parece que está fazendo 10 meses que nos conhecemos. Isso é surreal pra mim, nossa relação progrediu muito rápido e eu não poderia ser mais feliz por isso, e nossa história não teve um começo, teve reticências. Lembro de sair do meu antigo trabalho e ir direto pro reticências muito nervoso, com medo de você me dar um bolo kkkkkk e quando eu te vi nossa senhora, fiquei encantadíssimo, estava completamente linda e hoje eu só consigo pensar que nossa senhora como eu te amo meu amor.</p>
+            <hr class="highlight-line">
+            
+            <div class="new-section">
+                <div class="image-container">
+                    <img src="img/primE.jpg" alt="ilustração em que eu sou gostoso e ela sendo bela, como sempre">
+                </div>
+                <div class="text-container">
+                    <p>E cá estávamos nós. Lembro como se fosse ontem, indo de Uber moto para o Reticências te ver. Cheguei mais cedo pra garantir e, como eu estava nervoso, meu Deus, com medo de tomar bolo, mas no fim das contas você veio e, meu Deus, que mulher é essa! Foi quase amor à primeira vista. Tomamos chopp de vinho, conversamos e comemos uma batatinha frita, foi muito bom. No final do encontro, eu tiro uma barra de chocolate da calça pra te fazer uma surpresa, com ela toda derretida e amassada kkkkkk ô vergonha, mas você gostou e é o que importa. Esse primeiro encontro foi incrível pra mim e, depois daquilo, só me apaixonei mais por você. E como nós somos dois cabeçudos esquecemos de tirar uma foto, então esta é uma ilustração da nossa roupa e onde foi.</p>
+                </div>
+            </div>
+            <hr class="highlight-line">
+            <div class="new-section">
+                <div class="text-container-2">
+                    <p>Não posso afirmar com clareza, mas eu tenho quase certeza que esta foi a foto do nosso segundo encontro, e partiularmente uma das favoritas minhas, sendo meu wallpaper do whatsapp. Enfim, esse encontro foi supe divertido e muito significativo pra mim, fomos ver Exorcista, um filme bem light. Acho engraçado que lembro de detalhes, como o que comemos e a poltrna exata que sentamos, e pensar que hoje em dia eu namoro essa pessoa. Não poderia ser mais feliz, depois disso nossa relação só cresceu.</p>
+                </div>
+                <div class="image-container">
+                    <img src="img/cinema.jpg" alt="xonadin nessa foto">
+                </div>
+            </div>
+        </main>
+        
+    </div>
+
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.toggle('active');
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('sidebar').classList.remove('active');
+        });
+    </script>
+
+</body>
+</html>

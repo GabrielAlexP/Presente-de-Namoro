@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Melhores Momentos</title>
+    <link rel="stylesheet" href="presente.css">
+    <link rel="icon" href="img/favicon.png">
+</head>
+<body>
+
+    <header>
+        <h1><a href="index.html" style="text-decoration: none; color: inherit;">Nossas Memórias</a></h1>
+        <button id="menu-toggle" aria-label="Abrir Menu">☰</button>
+    </header>
+
+    <div class="container">
+        <nav id="sidebar" class="sidebar">
+            <ul>
+                <li><a href="primeiro.html">O(s) primeiro(s) encontro(s)</a></li>
+                <li><a href="presente.html">O presente</a></li>
+                <li><a href="pedido.html">Pedido de Namoro</a></li>
+                <li><a href="bnb.html">Nosso AirBnb</a></li>
+            </ul>
+        </nav>
+
+        <main class="content">
+            <h2>A mudança de Chave</h2>
+            <p>Passando um tempo, eu estava realmente gostando do meu amor e eu queria expressar isso. Eu não queria parecer emocionado e dar um passo pra avançar nossa relação sem ela querer, então eu decidi dar um presentinho de algo que ela queria.</p>
+            <hr class="highlight-line">
+
+            <div class="new-section">
+                <div class="image-container">
+                    <img  class="livro" src="img/livro.jpg" alt="Livrinho">
+                </div>
+                <div class="text-container"> 
+                    <p>Em Novembro, eu tinha acabado de receber meu salário e pensei. Por que não comprar um presente para minha futura esposa ? Dito isso, comprei A corte de Asas e Ruína, na época estávamos acabando o livro anterior por PDF e gostaria que ela tivesse a experiência de ter os livros em mão. Meti o livro na mochila e fui com ela no cinema, e várias vezes ela me perguntava sobre a mochila kkkkkk, ainda bem que ela acreditou que era pra levar o casaco. Depois do filme, na praça de alimentação ela recebeu meu primeiro presente, o livro com uma carta dediada a ela e de verdade, vendo como ela ficou feliz ali fez eu ter certeza que eu amava essa mulher. A partir daí decidi mimar ela o máximo que eu conseguisse</p>
+                </div>
+            </div>
+            <hr class="highlight-line">
+        </main>
+    </div>
+
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.toggle('active');
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('sidebar').classList.remove('active');
+        });
+    </script>
+
+</body>
+</html>

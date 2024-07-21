@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Te amo meu amor</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    background: #ff69b4;
+}
+
+.app{
+    background: #4b6bc4;
+    width: 90%;
+    max-width: 600px;
+    margin: 100px auto 0;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.app h1{
+    font-size: 25px;
+    color: #001e4d;
+    font-weight: 600;
+    border-bottom: 1px solid #333;
+    padding-bottom: 30px;
+}
+
+.quiz{
+    padding: 20px 0;
+}
+
+.quiz h2{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.btn{
+    background: #c5c2c2;
+    color: #222;
+    font-weight: 500;
+    width: 100%;
+    border: 1px solid #222;
+    padding: 10px;
+    margin: 10px 0;
+    text-align: left;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn:hover:not([disabled]){
+    background: #222;
+    color: #fff;
+}
+
+.btn:disabled{
+    cursor: no-drop;
+}
+
+#next{
+    background: #001e4d;
+    color: #fff;
+    font-weight: 500;
+    width: 150px;
+    border: 0;
+    padding: 10px;
+    margin: 20px auto 0;
+    border-radius: 4px;
+    cursor: pointer;
+    display: none;
+}
+
+.correct{
+    background: #43f590;
+}
+.incorrect{
+    background: #f74141;
+}
+    </style>
+</head>
+
+<body>
+
+<div class="app">
+    <h1>Quiz</h1>
+    <div class="quiz">
+        <h2 id="question">Pergunta aqui</h2>
+        <div id="perguntas">
+            <button class="btn">Pergunta 1</button>
+            <button class="btn">Pergunta 2</button>
+            <button class="btn">Pergunta 3</button>
+            <button class="btn">Pergunta 4</button>
+        </div>
+        <button id="next">Próximo</button>
+    </div>
+</div>    
+<script>
+const questions = [
+    {
+        question: "Olá! Este é um mini site que eu fiz para vossa senhoria com algumas perguntinhas e caso acerte, ganhará um prêmio no final. Preparada ? Aqui vai a primeira pergunta, quando nos conhecemos ?",
+        answers: [
+            { text: "7 de Outubro", correct: false},
+            { text: "24 de Outubro", correct: false},
+            { text: "20 de Outubro", correct: true},
+            { text: "7 de Novembro", correct: false},
+        ]
+    },
+    {
+        question: "Olha só, acertou a primeira pergunta. Mas agora vamos ver se você realmente lembra sobre nossa relação, qual foi a obra que nos uniu de cara ?",
+        answers: [
+            { text: "Acotar", correct: false},
+            { text: "Harry Potter", correct: true},
+            { text: "Percy Jackson", correct: false},
+            { text: "Crepúsculo", correct: false},
+        ] 
+    },
+    {
+        question: "Acertou as duas questões. Você realmente lembra de bastante coisa sobre nós, mas aqui vai a terceira pergunta. Já que Harry Potter foi a obra que nos aproximou, qual foi a que mais nos aproximou ?",
+        answers: [
+            { text: "Acotar", correct: true},
+            { text: "Arcane", correct: false},
+            { text: "Percy Jackson", correct: false},
+            { text: "Sex Education", correct: false},
+        ]
+    },
+    {
+        question: "Ora ora, você está quase no final então aqui vai a pergunta mais difícil daqui. Se você tivesse que escolher entre mim ou Rhysand, por que você escolheu o Rhysand ?",
+        answers: [
+            { text: "Ele é gostoso", correct: true},
+            { text: "Envergadura de Asa", correct: false},
+            { text: "Ele é tudinho de bom", correct: false},
+            { text: "Não amor, prefiro você", correct: false},
+        ]
+    }
+];
+
+const questionElement = document.getElementById("question")
+const answerButtons = document.getElementById("perguntas")
+const nextButton = document.getElementById("next")
+
+let currentQuestionIndex = 0;
+let score = 0;
+
+function startQuiz(){
+    currentQuestionIndex = 0;
+    score = 0;
+    nextButton.innerHTML = "Proximo";
+    showQuestion();
+}
+
+function showQuestion(){
+    resetState();
+    let currentQuestion = questions[currentQuestionIndex];
+    let questionNo = currentQuestionIndex + 1;
+    questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
+
+    currentQuestion.answers.forEach(answer => {
+        const button = document.createElement("button");
+        button.innerHTML = answer.text;
+        button.classList.add("btn");
+        answerButtons.appendChild(button);
+        if(answer.correct){
+            button.dataset.correct = answer.correct;
+        }
+        button.addEventListener("click", selectAnswer);
+    });
+}
+
+
+function resetState(){
+    nextButton.style.display ="none";
+    while(answerButtons.firstChild){
+        answerButtons.removeChild(answerButtons.firstChild);
+    }
+}
+
+function selectAnswer(e){
+    const selectedBtn = e.target;
+    const isCorrect = selectedBtn.dataset.correct === "true";
+    if(isCorrect){
+        selectedBtn.classList.add("correct");
+        score++;
+    }else{
+        selectedBtn.classList.add("incorrect");
+    }
+    
+    nextButton.style.display = "block"
+}
+function showScore(){
+    resetState();
+    questionElement.innerHTML = "Bem, você conseguiu. Acertou todas as respostas, e seu prêmio infelizmente não está aqui, mas sugiro que procure embaixo do travesseiro"
+    nextButton.innerHTML = "Voltar para o Site";
+    nextButton.style.display = "block";
+}
+
+function handleNextButton(){
+    currentQuestionIndex++;
+    if(currentQuestionIndex < questions.length){
+        showQuestion();
+    }else{
+        showScore();
+    }
+}
+
+nextButton.addEventListener("click", ()=>{
+    if(currentQuestionIndex < questions.length){
+        handleNextButton();
+    }else{
+        // Redireciona para pedido.html ao invés de iniciar o quiz novamente
+        window.location.href = "pedido.html";
+    }
+})
+
+startQuiz();
+
+</script>
+</body>
+
+</html>

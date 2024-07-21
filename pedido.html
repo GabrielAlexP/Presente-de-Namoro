@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Melhores Momentos</title>
+    <link rel="stylesheet" href="pedido.css">
+    <link rel="icon" href="img/favicon.png">
+</head>
+<body>
+
+    <header>
+        <h1><a href="index.html" style="text-decoration: none; color: inherit;">Nossas Memórias</a></h1>
+        <button id="menu-toggle" aria-label="Abrir Menu">☰</button>
+    </header>
+
+    <div class="container">
+        <nav id="sidebar" class="sidebar">
+            <ul>
+                <li><a href="primeiro.html">O(s) primeiro(s) encontro(s)</a></li>
+                <li><a href="presente.html">O presente</a></li>
+                <li><a href="pedido.html">Pedido de Namoro</a></li>
+                <li><a href="bnb.html">Nosso AirBnb</a></li>
+            </ul>
+        </nav>
+
+        <main class="content">
+            <h2>O Começo do Sonho</h2>
+            <p>Na época eu estava desempregado, mas eu não queria deixar de fazer algo especial por ela então fiz meu melhor para agrada-la e felizmente, ela disse sim ao meu pedido.</p>
+            <hr class="highlight-line">
+
+            <div class="new-section">
+                <div class="image-container">
+                    <img src="img/namoro.jpg" alt="Imagem mais linda cuti cuti modeusso">
+                </div>
+                <div class="text-container">
+                    <p>Eu estava completamente nervoso, mas dia 20/01/2024 eu tive coragem e quando tinha só ela e eu no cinema, me ajoelhei e a pedi em namoro. Confesso que foram os segundos mais demorados da minha vida, mas ela disse sim então estava feito, fiquei muito feliz e desse dia em diante, passamos a ser Sr. e Sra. Namoridos.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.toggle('active');
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('sidebar').classList.remove('active');
+        });
+    </script>
+
+</body>
+</html>
